@@ -1,29 +1,23 @@
 package com.company;
 
 public class Account {
-    private int balance;
-    private String name;
     private int accountNumber;
+    private String name;
+    private int balance;
+    public Account(int accountNum, int bal) {
+        this.accountNumber = accountNum;
+        this.balance = bal;
+    }
 
-    public Account(String name, int accountNumber, int balance) {
-        this.name= name;
-        this.accountNumber = accountNumber;
-        this.balance = balance;
+    public int getAccountNumber() {
+        return this.accountNumber;
     }
 
     public int getBalance() {
         return this.balance;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public int getAccountNumber(){
-        return this.accountNumber;
-    }
-
-    public void setBalance(int balance){
-        this.balance = balance;
+    public void setBalance(int bal) {
+        this.balance = bal;
     }
 }

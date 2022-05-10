@@ -4,34 +4,47 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Account katy = new Account("Katy",123456, 1000);
-        Bank SEB = new Bank();
-        SEB.addAccount(katy);
 
+        Bank theBank = new Bank();
+        Account myAccount = new Account(1122, 1000);
+        Account yourAccount = new Account(3344, 5000);
+        theBank.addAccount(myAccount);
+        theBank.addAccount(yourAccount);
+
+        ATM awesomeATM = new ATM();
         boolean cardInMachine = true;
-        ATM myAmazingATM = new ATM();
+
 
         System.out.println("Enter your account number: ");
         Scanner scan = new Scanner (System.in);
-        int scannedAccountNumber = scan.nextInt();
-
-        Account userAccount = SEB.getAccount(scannedAccountNumber);
-        myAmazingATM.showMenu();
+        int acountNumber = scan.nextInt();
+        Account account = theBank.getAccount(accountNumber);
 
 
         while(cardInMachine){
-            myAmazingATM.showMenu();
+            awesomeATM.showMenu();
             int userChoice = scan.nextInt();
+            switch(choice) {
 
-            switch(userChoice){
                 case 1:
+                    awesomeATM.checkBalance(account);
                     //check balance
+                    break;
+
                 case 2:
-                    //
+                    System.out.println("Enter amount to withdraw: ");
+                    int amount = scan.nextInt();
+                    awesomeATM.withdrawMoney(account, amount);
+                    break;
+
+                case 3:
+                    cardInMachine = false;
+                    System.out.println("Goodbye : )");
+                    break;
+                default:
+                    System.out.println("Invalid choice: (");
+
         }
-
-
-
         }
     }
 }

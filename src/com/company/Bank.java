@@ -4,16 +4,12 @@ import java.util.ArrayList;
 
 public class Bank {
     ArrayList<Account> allAccounts = new ArrayList<Account>();
-
-    public void Bank(){
-
-    }
     public void addAccount(Account account){
         this.allAccounts.add(account);
     }
 
     public Account getAccount(int accountNumber){
-        for(Account account : allAccounts){
+        for(Account account:allAccounts){
             if(account.getAccountNumber() == accountNumber){
                 return account;
             }
